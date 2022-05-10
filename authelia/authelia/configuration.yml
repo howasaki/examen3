@@ -4,7 +4,7 @@
 ###############################################################
 
 jwt_secret: a_very_important_secret
-default_redirection_url: https://public.example.com
+default_redirection_url: https://google.com
 
 server:
   host: 0.0.0.0
@@ -48,6 +48,12 @@ storage:
     path: /config/db.sqlite3
 
 notifier:
-  filesystem:
-    filename: /config/notification.txt
+  smtp:
+    username: 1b892dabf12150
+    # This secret can also be set using the env variables AUTHELIA_NOTIFIER_SMTP_PASSWORD
+    # From mailtrap.io
+    password: d2fcf66135c526
+    host: smtp.mailtrap.io
+    port: 2525
+    sender: admin@example.com
 ...
