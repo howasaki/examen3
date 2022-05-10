@@ -40,9 +40,9 @@
           - portainer_data:/data_portainer/
     - name: copy Docker compose yml 
       copy: 
-        src: ../authelia
+        src: ./authelia
         dest: /tmp/
     - name: Install Authelia 
       docker_compose:
-        project_src: /tmp/authelia  
+        project_src: /tmp/authelia
         state: present
